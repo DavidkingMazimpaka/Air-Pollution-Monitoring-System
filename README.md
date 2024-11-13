@@ -45,3 +45,90 @@ Open the code and modify the following lines with your Wi-Fi network credentials
 ```cpp
 char ssid[] = "YOUR_WIFI_SSID";
 char pass[] = "YOUR_WIFI_PASSWORD";
+```
+
+### 3. Configure Firebase
+Set up a **Firebase project** in the Firebase Console, and then replace the placeholders in the code with your own **API Key**, **Database URL**, and **User credentials**:
+```cpp
+#define API_KEY "YOUR_API_KEY"
+#define DATABASE_URL "https://your-database-url.firebaseio.com/"
+#define USER_EMAIL "YOUR_FIREBASE_EMAIL"
+#define USER_PASSWORD "YOUR_FIREBASE_PASSWORD"
+```
+
+### 4. Configure Adafruit IO
+Create an account on Adafruit IO and create a new feed for each sensor data type. Then, replace the placeholders with your Adafruit IO Username and Adafruit IO Key:
+```cpp
+#define AIO_USERNAME "YOUR_AIO_USERNAME"
+#define AIO_KEY "YOUR_AIO_KEY"
+```
+
+### 5. Upload the Code
+Once you've configured your Wi-Fi, Firebase, and Adafruit IO settings, upload the code to your ESP8266 using the Arduino IDE.
+
+### 6. Monitor the System
+Once the code is uploaded:
+
+- **LCD Display**LCD Display: The sensor data (temperature, humidity, gas concentrations, and GPS coordinates) will be displayed on the LCD screen in a rotating cycle.
+- **Buzzer**: The buzzer will sound when CO2 levels exceed the threshold of 420 PPM.
+- **Firebase & Adafruit IO**: The sensor data will be uploaded to Firebase and Adafruit IO for cloud-based monitoring.
+
+### Data Sent to Firebase
+The following sensor data is sent to Firebase:
+
+- Latitude and Longitude (from GPS)
+- Temperature (in °C)
+- Humidity (in %)
+- CO (in PPM)
+- CO2 (in PPM)
+- NH4 (in PPM)
+- Alcohol (in PPM)
+- Toluene (in PPM)
+- Acetone (in PPM)
+The data is stored in Firebase under the path:
+/stations/data/{station_id}
+
+### Data Sent to Adafruit IO
+The following data is sent to Adafruit IO via MQTT:
+
+- Temperature (in °C)
+- Humidity (in %)
+- CO (in PPM)
+- CO2 (in PPM)
+- NH4 (in PPM)
+- Alcohol (in PPM)
+
+### Troubleshooting
+**Wi-Fi Connection**
+
+If your ESP8266 is not connecting to Wi-Fi:
+Make sure that the SSID and Password are correct.
+Ensure that your Wi-Fi network is working and within range.
+
+**GPS Not Acquiring Fix**
+
+Ensure your GPS module has a clear line of sight to the sky.
+If the GPS is not providing valid data, check the wiring and ensure proper power supply.
+
+**MQ-135 Calibration** 
+
+If the MQ135 sensor is not providing stable readings:
+Try recalibrating the sensor by following the calibration code in the calibrateMQ135() function.
+Ensure the sensor is not exposed to high levels of pollutants during calibration.
+
+**Buzzer Not Triggering** 
+
+If the buzzer doesn't sound when CO2 levels exceed the threshold:
+Ensure the threshold for CO2 is set correctly in the controlBuzzer() function.
+Check that the buzzer wiring is correct and functioning.
+
+### Future Improvements
+
+- **Mobile App**: Build a mobile app to display and analyze the data in real-time.
+- **Additional Sensors**: Add more sensors (e.g., PM2.5, sound, light) to monitor additional environmental parameters.
+- **Data Logging**: Implement features to log data locally on an SD card or an external database for offline storage.
+
+
+### Contribution:
+1. **Team Section**: Added the `NodeMasters` team name under the **Team** heading.
+2. **Author Section**:**David King Mazimpaka**, as the lead and creator of the Team.
