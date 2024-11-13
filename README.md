@@ -131,4 +131,4 @@ Check that the buzzer wiring is correct and functioning.
 
 ### Contribution:
 1. **Team Section**: Added the `NodeMasters` team name under the **Team** heading.
-2. **Author Section**:**David King Mazimpaka**, as the lead and creator of the Team.
+2. **Author Section**:[**David King Mazimpaka**](https://github.com/DavidkingMazimpaka), as the lead creator of the Team.
