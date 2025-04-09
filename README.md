@@ -122,6 +122,9 @@ If the buzzer doesn't sound when CO2 levels exceed the threshold:
 Ensure the threshold for CO2 is set correctly in the controlBuzzer() function.
 Check that the buzzer wiring is correct and functioning.
 
+### Project Demo
+[Download Air Qaulity Monitoring Apk](https://mega.nz/folder/4o5jUB5D#w04iHxKIXjQWcnqb67_ocQ)
+
 ### Future Improvements
 
 - **Mobile App**: Build a mobile app to display and analyze the data in real-time.
